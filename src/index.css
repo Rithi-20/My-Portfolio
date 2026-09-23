@@ -1,0 +1,211 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html.dark {
+  color-scheme: dark;
+  background-color: #090a0f;
+  color: #f4f4f5;
+}
+
+html.light {
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+/* Custom scrollbar for clean technical aesthetic */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 15, 18, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(63, 63, 70, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(113, 113, 122, 0.7);
+}
+
+/* =========================================================================
+   COMPREHENSIVE LIGHT THEME SYSTEM
+   Ensures crystal-clear contrast and crisp borders across all sections
+   ========================================================================= */
+
+html.light {
+  /* Scrollbar in light mode */
+  &::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* 1. Body & Section Backgrounds */
+  body,
+  main,
+  section,
+  footer {
+    background-color: #f8fafc !important;
+  }
+
+  /* 2. Primary Cards & Surfaces */
+  .bg-neutral-900,
+  [class*="bg-neutral-900"],
+  [class*="bg-neutral-950"] {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  /* 3. Nested Sub-cards, Node Pills, Tech Tags, and Code Blocks */
+  .bg-neutral-950\/80,
+  .bg-neutral-950\/60,
+  .bg-neutral-900\/90,
+  .bg-neutral-900\/80,
+  .bg-neutral-900\/60,
+  .bg-neutral-900\/40,
+  .bg-neutral-900\/30,
+  .bg-neutral-900\/20,
+  .bg-neutral-800,
+  [class*="bg-neutral-800"],
+  [class*="bg-neutral-950\/"],
+  [class*="bg-neutral-900\/"] {
+    background-color: #f8fafc !important;
+    background-image: none !important;
+  }
+
+  /* Tech tags & Pill Badges */
+  span[class*="bg-neutral-950"],
+  span[class*="bg-neutral-900"],
+  span[class*="bg-neutral-800"],
+  div[class*="bg-neutral-950\/60"] {
+    background-color: #f1f5f9 !important;
+    border-color: #e2e8f0 !important;
+    color: #1e293b !important;
+  }
+
+  /* 4. Emerald Badges & Status Indicators */
+  [class*="bg-emerald-950"] {
+    background-color: #ecfdf5 !important;
+    border-color: #a7f3d0 !important;
+    color: #047857 !important;
+  }
+
+  /* 5. Borders & Dividers */
+  .border-neutral-800,
+  .border-neutral-900,
+  [class*="border-neutral-800"],
+  [class*="border-neutral-900"] {
+    border-color: #e2e8f0 !important;
+  }
+
+  .border-neutral-700,
+  [class*="border-neutral-700"] {
+    border-color: #cbd5e1 !important;
+  }
+
+  /* 6. Typography */
+  .text-neutral-100 {
+    color: #0f172a !important;
+  }
+
+  .text-neutral-200 {
+    color: #1e293b !important;
+  }
+
+  .text-neutral-300 {
+    color: #334155 !important;
+  }
+
+  .text-neutral-400 {
+    color: #475569 !important;
+  }
+
+  .text-neutral-500 {
+    color: #64748b !important;
+  }
+
+  .text-neutral-600 {
+    color: #94a3b8 !important;
+  }
+
+  /* 7. Accent Colors Contrast in Light Mode */
+  .text-emerald-400,
+  .text-emerald-500 {
+    color: #059669 !important;
+  }
+
+  .text-teal-400 {
+    color: #0d9488 !important;
+  }
+
+  .text-cyan-400 {
+    color: #0284c7 !important;
+  }
+
+  .text-amber-400,
+  .text-amber-400\/90 {
+    color: #d97706 !important;
+  }
+
+  .text-red-400,
+  .text-red-400\/90 {
+    color: #dc2626 !important;
+  }
+
+  /* 8. Inputs, Textareas, Search Fields */
+  input,
+  textarea {
+    background-color: #ffffff !important;
+    border-color: #cbd5e1 !important;
+    color: #0f172a !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #94a3b8 !important;
+  }
+
+  /* 9. Buttons */
+  button.bg-emerald-400,
+  a.bg-emerald-400 {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+  }
+
+  button.bg-emerald-400:hover,
+  a.bg-emerald-400:hover {
+    background-color: #059669 !important;
+    color: #ffffff !important;
+  }
+
+  /* Hover states */
+  .hover\:bg-neutral-800:hover,
+  .hover\:bg-neutral-900:hover {
+    background-color: #f1f5f9 !important;
+  }
+
+  /* Modals Overlay */
+  .bg-neutral-950\/80 {
+    background-color: rgba(15, 23, 42, 0.45) !important;
+  }
+}
